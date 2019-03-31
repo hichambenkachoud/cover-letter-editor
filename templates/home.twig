@@ -1,0 +1,404 @@
+{% extends 'sidebar.twig' %}
+
+{% import 'form.twig' as form %}
+
+{% block head %}
+	<title>Home</title>
+{% endblock %}
+
+{% block main %}
+
+
+
+
+
+    <div class="" id="model1">
+        {% if Model.id == 1 %}
+            {{ include('modele_lettre_1.twig')  }}
+        {% endif %}
+
+        {% if Model.id == 2 %}
+            {{ include('modele_lettre_2.twig')  }}
+        {% endif %}
+        {% if Model.id is empty or (Model.id != 1  and Model.id != 2) %}
+            {{ include('modele_lettre_1.twig')  }}
+        {% endif %}       
+        
+    </div>
+
+
+    <div class="modal fade bs-example-modal-lg" id="ModifierMyInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modifier vos informations </h4>
+                
+              </div>
+                <div class="modal-body" style="overflow:hidden;">
+                    <div class="module">
+                        <ul class="Setting">
+                        <form id="formExpediteur" data-id ="1" class="form-horizontal" parsley-validate="">
+                            <li id="NIDE" class="S">
+                                 <div class="form-group col-md-12" style="display:none;">
+                                    <div class="input-group transparent">
+                                            {{form.input('IdE','IDE',User.id)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="NNom" class="S">
+                                 <div class="form-group col-md-12" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 69px;"> NOM </i>
+                                            </span>
+                                            {{form.input('NomE','NOM',User.nom)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="PPrenom" class="S">
+                               <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 44px;"> PRENOM</i>
+                                            </span>
+                                            {{form.input('PrenomE','Prenom',User.prenom)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EEmail" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-envelope" style="padding-right : 55px;"> EMAIL </i>
+                                            </span>
+                                            {{form.input('EmailE','Email',User.email)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EAddresse" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-map-marker" style="padding-right : 34px;"> ADDRESSE  </i>
+                                            </span>
+                                            {{form.input('AddresseE','Addresse',User.addresse)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="ECodePostale" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-info-circle"> CODE POSTALE</i>
+                                            </span>
+                                            {{form.input('CodePostaleE','CodePostaleE',User.codePostale)}}                                    
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EVille" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-home" style="padding-right : 60px;"> VILLE</i>
+                                            </span>
+                                            {{form.input('VilleE','Ville',User.ville)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EPays" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-globe" style="padding-right : 68px;"> PAYS</i>
+                                            </span>
+                                            {{form.input('PaysE','Pays',User.pays)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="ETele" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-phone" style="padding-right : 21px;"> TELEPHONE</i>
+                                            </span>
+                                            {{form.input('TeleE','Tele',User.telephone)}}
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-success" id="ModifierInfoUser" >Valider</button>
+                    <div class="" id="msgDiv">
+
+                </div>
+                </div>
+
+            </form>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bs-example-modal-lg" id="ModifierInfoDestinataire" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modifier Les informations Destinataire </h4>
+                
+              </div>
+                <div class="modal-body" style="overflow:hidden;">
+                    <div class="module">
+                        
+                        <form id="formDestinataire" data-id ="1" class="form-horizontal" parsley-validate="">
+                        <ul class="Setting">
+                            <li id="NCivilite" class="S">
+                                    <div class="input-group transparent" style="display:none;">
+                                            {{form.input('IdD','IDD',Recruteur.id)}}
+                                    </div>
+                                
+                            </li>
+                            <li>
+                            <div class="form-group col-md-6" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">   
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 57px;"> Civilite </i>
+                                            </span>
+                                            
+                                                <select class="form-control" name="Civilite">
+                                                             {{ form.select('','','Please Select... ','') }}
+                                                             {% if Recruteur.civilite == "Mr." %}
+                                                                 {{ form.select('Civilite',Recruteur.civilite,'Mr. ', 'selected') }}
+                                                             {% endif %}
+                                                             {% if Recruteur.civilite != "Mr." %}
+                                                                 {{ form.select('Civilite','Mr.','Mr. ', '') }}
+                                                             {% endif %}
+
+                                                              {% if Recruteur.civilite == "Mme" %}
+                                                                 {{ form.select('Civilite',Recruteur.civilite,'Mme','selected') }}
+                                                             {% endif %}
+                                                             {% if Recruteur.civilite != "Mme" %}
+                                                                 {{ form.select('Civilite','Mme','Mme','') }}
+                                                             {% endif %}          
+                                                </select>
+                                            
+                                    </div>
+                            </div>
+                        </li>
+
+                            <li id="NNom" class="S">
+                                
+                                 <div class="form-group col-md-12" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 67px;"> NOM </i>
+                                            </span>
+                                            {{form.input('NomD','NOM',Recruteur.nom)}}
+                                    </div>
+                                 </div>
+                           
+                            </li>
+                            <li id="PPrenom" class="S">
+                               <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 42px;"> PRENOM</i>
+                                            </span>
+                                            {{form.input('PrenomD','Prenom',Recruteur.prenom)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EEmail" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-envelope" style="padding-right : 15px;"> ENTREPRISE </i>
+                                            </span>
+                                             {{form.input('EntrepriseD','Entreprise',Recruteur.NomCompany)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EAddresse" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-map-marker" style="padding-right : 32px;"> ADDRESSE  </i>
+                                            </span>
+                                            {{form.input('AddresseD','Addresse',Recruteur.addresse)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="ECodePostale" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-info-circle"> CODE POSTALE</i>
+                                            </span>
+                                            {{form.input('CodePostaleD','CodePostale',Recruteur.codePostale)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EVille" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-home" style="padding-right : 62px;"> VILLE</i>
+                                            </span>
+                                            {{form.input('VilleD','Ville',Recruteur.ville)}}
+                                    </div>
+                                 </div>
+                            </li>
+                            <li id="EPays" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-globe" style="padding-right : 70px;"> PAYS</i>
+                                            </span>
+                                            {{form.input('PaysD','Pays',Recruteur.pays)}}
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-success" id ="modifierDestinataire">Valider</button>
+                    <div class="" id="msgDes"></div>
+                </div>
+
+                    </div>
+                </form>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+  <div class="modal fade bs-example-modal-lg" id="ModifierParagraphe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Modifier les paragraphes de la lettre </h4>
+              </div>
+                <div class="modal-body" style="overflow:hidden;">
+                    <div class="module">
+                        
+                        <form id="formParagLettre" data-id ="1" class="form-horizontal" parsley-validate="">
+                        <ul class="Setting">
+
+                            <li id="NCivilite" class="S">
+                                    <div class="input-group transparent" style="display:none;">
+                                            {{form.input('IdUser','IDU',User.id)}}
+                                            {{form.input('IdLettre','IDU',Lettre.idLettre)}}
+                                            {{form.input('IdRecruteur','IDR',Recruteur.id)}}
+                                    </div>
+                                
+                            </li>
+
+                            <li id="ObjectL" class="S">
+                                
+                                 <div class="form-group col-md-12" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="padding-right : 13px;"> OBJET </i>
+                                            </span>
+                                            {{form.input('ObjetL','Objet',Lettre.objet)}}
+                                    </div>
+                                 </div>
+                           
+                            </li>
+                            <li id="DateL" class="S">
+                                <div class="form-group col-md-12 DDF-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon ">
+                                                <i class="fa fa-calendar" style="padding-right : 16px;"> DATE </i>
+                                            </span>
+                                             {{form.inputDate('DateL','DateL',Lettre.date)}}
+                                    </div>
+                                 </div>
+                            </li>
+
+                            <li id="VilleL" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-map-marker" style="padding-right : 32px;"> Ville  </i>
+                                            </span>
+                                            {{form.input('VilleL','Ville',Lettre.ville)}}
+                                    </div>
+                                 </div>
+                            </li>
+
+                            <li id="ParagOverL" class="S">
+                                
+                                 <div class="form-group col-md-12" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-pencil" style="padding-right : 8px;"> Paragraphe d'ouverture </i>
+                                            </span>
+                                            {{form.textarea('paragOuverture','Paragraphe Ouverture',Lettre.paragOuverture) }}
+
+                                    </div>
+                                 </div>
+                           
+                            </li>
+                            <li id="ParagCorpL" class="S">
+                                <div class="form-group col-md-12 DDF-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-pencil" style="padding-right : 30px;"> Paragraphe Corpus </i>
+                                            </span>
+                                            {{form.textarea('paragCorps','Corpus de lettre',Lettre.paragCorps) }}
+                                    </div>
+                                 </div>
+                            </li>
+
+                            <li id="ParagFermL" class="S">
+                                <div class="form-group col-md-12 Intitule-1" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-pencil" style="padding-right : 0px;"> Paragraphe de fermeture </i>
+                                            </span>
+                                            {{form.textarea('paragFermeture','Paragraphe de fermeture',Lettre.paragFermeture) }}
+                                    </div>
+                                 </div>
+                            </li>
+
+                            <li id="SignatureL" class="S">
+                                
+                                 <div class="form-group col-md-12" style="margin-right:10px; margin-top:14px;">
+                                    <div class="input-group transparent">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-pencil" style="padding-right : 8px;"> Formule de Poliesse </i>
+                                            </span>
+                                            {{form.textarea('paragPolitisse','Formule de Poliesse',Lettre.paragPolitisse) }}
+
+                                    </div>
+                                 </div>
+                           
+                            </li>
+
+                        </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-success" id="modifierLettre">Valider</button>
+                   <div class="" id="msgparag"></div>
+                </div>
+                    </div>
+                </form>
+                </div>
+                
+            </div>
+        </div>
+ </div>
+    
+     
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+	<div class="row">
+	   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-center">EDITH DEGITAL</div>
+            <div class="navbar-collapse collapse">
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav navbar-nav pull-right header-menu">
+                    <!-- BEGIN USER DROPDOWN -->
+                    <li class="dropdown" id="user-header">
+                        <a href="#" id="deconnecter" class="Deco">
+                            <img src="assets/img/avatars/avatar10.png" alt="user avatar" width="30" class="p-r-5">
+                            <span class="username">{{ User.nom }}</span>
+                            <span class="username">{{ User.prenom }}</span>
+                            <i class="fa fa-angle-down p-r-10"></i>
+                        </a>
+                    </li>
+                    <!-- END USER DROPDOWN -->
+
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+    </nav>
+		<div class="col-xs-2 col-md-2 col-lg-2">
+			
+			<div id="wrapper">
+        <!-- BEGIN MAIN SIDEBAR -->
+			        <nav id="sidebar">
+			            <div id="main-menu">
+			                <ul class="sidebar-nav">
+			                    <li class="">
+			                        <a href="#"><i class="fa fa-folder-open-o"></i><span class="sidebar-text">Expéditeur</span><span class="fa arrow"></span></a>
+			                        <ul class="submenu collapse">
+			                            <!--li>
+			                                <a class="fa fa-pencil" href ="" data-toggle="modal" data-target="#AjouterMyInfo"><span class="sidebar-text"> Ajouter vos informations</span></a>
+			                            </li-->
+			                            <li>
+			                                <a class="fa fa-archive" href="" data-toggle="modal" data-target="#ModifierMyInfo"><span class="sidebar-text"> Modifier vous informations</span></a>
+			                            </li>
+			                        </ul>
+			                    </li>
+			                    <li>
+			                        <a href="#"><i class="fa fa-bookmark"></i><span class="sidebar-text">Destinataire</span><span class="fa arrow"></span></a>
+			                        <ul class="submenu collapse">
+			                            <!--li>
+			                                <a class="fa fa-pencil" href="" data-toggle="modal" data-target="#AjouterInfoDestinataire"><span class="sidebar-text"> Ajouter destinataire</span></a>
+			                            </li-->
+			                            <li>
+			                                <a class="fa fa-archive" href="" data-toggle="modal" data-target="#ModifierInfoDestinataire"><span class="sidebar-text"> Modifier destinataire</span></a>
+			                            </li>
+			                        </ul>
+			                    </li>
+
+			                    <li>
+			                        <a href="#"><i class="fa fa-gavel"></i><span class="sidebar-text">Paragraphes de la lettre</span><span class="fa arrow"></span></a>
+			                        <ul class="submenu collapse">
+			                            <!--li>
+			                                <a class="fa fa-plus" href="" data-toggle="modal" data-target="#AjouteParagraphe"><span class="sidebar-text" > Ajouter les paragraphes</span></a>
+			                            </li-->
+			                            <li>
+			                                <a class="fa fa-archive" href="" data-toggle="modal" data-target="#ModifierParagraphe"><span class="sidebar-text"> Modifier les paragraphes</span></a>
+			                            </li>
+			                        </ul>
+			                    </li>
+
+			                    <li>
+			                        <a href="#" ><i class="glyphicon glyphicon-globe"></i><span class="sidebar-text">Modèle de lettre</span><span class="fa arrow"></span></a>
+			                        <ul class="submenu collapse">
+			                            <li style="margin-right:10px; margin-top:14px;">
+			                                <a class=""  href="index.php?mod=1"   id="mod1"><span class="sidebar-text"> Modèle 1 </span></a>
+			                            </li>
+			                            <li>
+			                                <a class=""  href="index.php?mod=2"   id="mod2" ><span class="sidebar-text"> Modèle 2</span></a>
+			                            </li>
+			                        </ul>
+			                    </li>
+
+			                </ul>
+			            </div>
+			                <div class="footer-widget">
+			                
+			                <div class="sidebar-footer clearfix">
+			                    <a class="pull-left toggle_fullscreen" href="#" rel="tooltip" data-placement="top" data-original-title="Plein écran"><i class="glyph-icon flaticon-fullscreen3"></i></a>
+			                    
+			                </div> 
+			            </div>
+			        </nav>
+
+
+			</div>
+		</div>
+
+		<div class="col-xs-9 col-md-9 col-lg-9">
+			
+			{% block main %}
+
+				
+			{% endblock  %}
+
+		</div>
+
+	
+
+	
+
+{% endblock content %}

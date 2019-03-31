@@ -1,0 +1,33 @@
+{% extends 'sidebar.twig' %}
+
+{% import 'form.twig' as form %}
+
+{% block head %}
+	<title> Connexion </title>
+{% endblock %}
+
+
+
+{% block content %}
+                        
+	 	
+	 	<div class="container" id="login-block">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+                <div class="login-box clearfix animated flipInY">
+                    <hr>
+                    <div class="login-form">
+                        <form  action = "" method="POST" enctype="multipart/form-data">
+                            {{form.inputConnexion('Nom','Votre NOM',nom)}}
+                            {{form.inputConnexion('Prenom','Votre Prenom',prenom)}}
+                            <button type="submit" class="btn btn-login">Se connecter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<h1>{{ test }}</h1>
+
+{% endblock %}
+

@@ -1,0 +1,273 @@
+{% extends 'sidebar.twig' %}
+
+{% block main %}
+
+	<page size="A4" >
+
+			
+					<center><h2 style="padding-top : 40px; padding-bottom : 10px;">Lettre de Motivation</h2></center>
+			
+			 
+			<dir class="col-xs-4 col-sm-4 ">
+				{% if Lettre.ville is defined %}
+							<span> {{Lettre.ville }} </span>
+						{% endif %}
+
+						{% if  Lettre.ville  is empty %}
+							<span> Ville </span>
+						{% endif %}
+
+
+						<span>, Le </span>
+
+						{% if Lettre.date is defined %}
+							<span> {{Lettre.date }} </span>
+						{% endif %}
+
+						{% if  Lettre.date  is empty %}
+							<span> Date </span>
+						{% endif %}
+				
+				<h4 style="padding-top : 160px;">Mes informations</h4>
+
+					<dir class="row">
+
+						{% if User.nom is defined%}
+							<span> {{User.nom}} </span>
+						{% endif %}
+
+						{% if  User.nom is empty %}
+							<span> Nom </span>
+						{% endif %}
+
+						{% if User.prenom is defined %}
+							<span> {{User.prenom}} </span>
+						{% endif %}
+
+						{% if  User.prenom is empty %}
+							<span> Prenom </span>
+						{% endif %}
+					
+					</dir>
+					<dir class="row">
+
+						{% if User.addresse is defined %}
+							<span> {{User.addresse}} </span>
+						{% endif %}
+
+						{% if  User.addresse is empty %}
+							<span> Addresse </span>
+						{% endif %}
+						
+					</dir>
+					<dir class="row">
+
+						{% if User.email is defined%}
+							<span> {{User.email}} </span>
+						{% endif %}
+
+						{% if  User.email is empty %}
+							<span>Email</span>
+						{% endif %}
+						
+					</dir>
+					<dir class="row">
+
+						{% if User.telephone is defined%}
+							<span> {{User.telephone}} </span>
+						{% endif %}
+
+						{% if  User.telephone is empty %}
+							<span>Téléphone</span>
+						{% endif %}
+						
+					</dir>
+
+				<h4 style="padding-top : 20px;">Information Entreprise</h4>
+
+					<dir class="row">
+
+						{% if Recruteur.civilite is defined%}
+							<span> {{Recruteur.civilite}} </span>
+						{% endif %}
+
+						{% if  Recruteur.civilite is empty %}
+							<span> Civilité </span>
+						{% endif %}
+
+						{% if Recruteur.nom is defined %}
+							<span> {{Recruteur.nom }} </span>
+						{% endif %}
+
+						{% if  Recruteur.nom  is empty %}
+							<span> Nom </span>
+						{% endif %}
+
+						{% if Recruteur.prenom is defined %}
+							<span> {{Recruteur.prenom }} </span>
+						{% endif %}
+
+						{% if  Recruteur.prenom  is empty %}
+							<span> Prenom </span>
+						{% endif %}
+					
+					</dir>
+					<dir class="row">
+
+						{% if Recruteur.NomCompany is defined%}
+							<span> {{Recruteur.NomCompany}} </span>
+						{% endif %}
+
+						{% if  Recruteur.NomCompany is empty %}
+							<span> Entreprise </span>
+						{% endif %}
+						
+					</dir>
+					<dir class="row">
+
+						{% if Recruteur.addresse is defined%}
+							<span> {{Recruteur.addresse}} </span>
+						{% endif %}
+
+						{% if  Recruteur.addresse is empty %}
+							<span> Adresse </span>
+						{% endif %}
+						
+					</dir>
+					<dir class="row">
+
+						{% if Recruteur.pays is defined%}
+							<span> {{Recruteur.pays}} </span>
+						{% endif %}
+
+						{% if  Recruteur.pays is empty %}
+							<span> Pays </span>
+						{% endif %}
+						
+					</dir>
+
+				
+				
+			</dir>
+			
+			<dir class="col-xs-8 col-sm-8 verticalLine">
+
+				<dir class="row" style="padding-top : 0px;">
+	
+						<dir class="col-xs-11">
+
+							<span ><strong>Objet:</strong></span>
+							{% if Lettre.objet is defined%}
+							<span> {{Lettre.objet}} </span>
+							{% endif %}
+
+							{% if  Lettre.objet is empty %}
+										<span> Objet </span>
+							{% endif %}
+						</dir>
+
+				</dir>
+
+				<dir class="row" style="padding-top : 20px;">
+					<dir class="col-xs-12">
+	
+						{% if Lettre.paragOuverture is defined %}
+							<span> {{Lettre.paragOuverture }} </span>
+				{% endif %}
+
+				{% if  Lettre.paragOuverture is empty %}
+							<span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
+				{% endif %}
+					</dir>
+
+				</dir>
+
+				<dir class="row" style="">
+					<dir class="col-xs-12">
+	
+						{% if Lettre.paragCorps is defined %}
+							<span> {{Lettre.paragCorps }} </span>
+				{% endif %}
+
+				{% if  Lettre.paragCorps is empty %}
+							<span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
+				{% endif %}
+					</dir>
+
+				</dir>
+
+				<dir class="row" style="">
+					<dir class="col-xs-11">
+					{% if Lettre.paragFermeture is defined %}
+							<span> {{Lettre.paragFermeture }} </span>
+				{% endif %}
+
+				{% if  Lettre.paragFermeture is empty %}
+							<span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
+				{% endif %}
+					</dir>
+
+				</dir>
+
+				<dir class="col-xs-12" style="">
+					<dir class="row">
+						{% if Lettre.paragPolitisse is defined %}
+							<span> {{Lettre.paragPolitisse }} </span>
+				{% endif %}
+
+				{% if  Lettre.paragPolitisse is empty %}
+				<span> Merci beaucoup </span>
+				{% endif %}	
+					</dir>
+
+				</dir>
+
+				<dir class="" style="">
+					<dir class="col-xs-7">
+		
+					</dir>
+					<dir class="col-xs-5">
+	
+						{% if User.nom is defined%}
+							<span> {{User.nom}} </span>
+						{% endif %}
+
+						{% if  User.nom is empty %}
+							<span> Nom </span>
+						{% endif %}
+
+						{% if User.prenom is defined %}
+							<span> {{User.prenom}} </span>
+						{% endif %}
+
+						{% if  User.prenom is empty %}
+							<span> Prenom </span>
+						{% endif %}
+						
+					</dir>
+
+				</dir>
+
+			</dir>
+
+
+
+    </page>
+
+
+{% endblock %}

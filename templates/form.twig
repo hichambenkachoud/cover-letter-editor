@@ -1,0 +1,38 @@
+
+{% macro inputConnexion(name,label,value=null) %}
+			
+			<div class="form-group Nom">
+                <input type="{{name}}" placeholder="{{label}}" value ="{{value}}" name="{{name}}" class="input-field form-control user Nom" id="{{name}}" />
+            </div>
+
+{% endmacro %}
+
+{% macro input(name,label,value=null) %}
+	
+		 <input type="text" id="{{name}}" value="{{value}}" name="{{name}}" class="form-control" placeholder="{{label}}">
+
+{% endmacro %}
+
+{% macro inputHidden(name,label) %}
+	
+		 <input type="hidden" id="{{name}}" name="{{name}}" class="form-control">
+
+{% endmacro %}
+
+{% macro inputDate(name,label,value=null) %}
+	
+		 <input  id="{{name}}" name="{{name}}" value="{{value}}" class="form-control" placeholder="{{label}}">
+
+{% endmacro %}
+
+{% macro select(name,value=null,prefix,selected) %}
+
+                <option value="{{value}}" {{selected}} = "{{selected}}" > {{prefix}} </option>	
+{% endmacro %}
+
+
+{% macro textarea(name,label,value=null) %}
+
+		<textarea type="text" class="form-control" id="{{name}}" name="{{name}}" cols="70" rows="5" maxlength="560" placeholder="{{label}}"> {{value}}</textarea>
+	
+{% endmacro %}

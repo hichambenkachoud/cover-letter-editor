@@ -1,0 +1,26 @@
+body {
+  background: rgb(204,204,204); 
+}
+page {
+  background: #CEC5FF;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1cm;
+  box-shadow: 1 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+  width: 20cm;
+  height: 28cm; 
+  margin-top: 15px;
+}
+
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+.verticalLine {
+  border-left: thick solid #8587D6;
+}

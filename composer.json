@@ -1,0 +1,12 @@
+{
+    "name": "edith/twig",
+    "authors": [
+        {
+            "name": "hicham",
+            "email": "hicham@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.0"
+    }
+}
